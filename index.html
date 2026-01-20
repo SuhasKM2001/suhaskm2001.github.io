@@ -1,754 +1,1029 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <title>Suhas K M</title>
+    <title>Suhas K M - AI/ML Engineer & Researcher</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon" />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
-
-  <body id="page-top">
-    <!--/ Nav Star /-->
-    <nav
-      class="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
-      id="mainNav"
-    >
-      <div class="container">
-        <!-- <a class="navbar-brand js-scroll" href="#page-top">DevFolio</a> -->
-        <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarDefault"
-          aria-controls="navbarDefault"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div
-          class="navbar-collapse collapse justify-content-end"
-          id="navbarDefault"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link js-scroll active" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="#certifications"
-                >Certifications</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="#achievements"
-                >Achievements</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll" href="assets/Suhas_K_M_Resume.pdf"
-                >Resume</a
-              >
-            </li>
-          </ul>
+    <meta content="Suhas K M, AI Engineer, Machine Learning, Gen AI, Portfolio" name="keywords" />
+    <meta content="Portfolio of Suhas K M - AI/ML Engineer and Researcher specializing in Generative AI and LLMs" name="description" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+        
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .education-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient);
+        }
+        
+        .education-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--light);
+        }
+        
+        .education-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .education-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .education-school {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-gpa {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .experience-company {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .experience-description {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .experience-description li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .experience-description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+        
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .skill-icon:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-icon i {
+            font-size: 2.5rem;
+        }
+        
+        .skill-tooltip {
+            position: absolute;
+            bottom: -35px;
+            background: var(--dark);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .skill-icon:hover .skill-tooltip {
+            opacity: 1;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-tech {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .project-link:hover {
+            color: var(--secondary);
+        }
+        
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .publication-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .publication-authors {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-venue {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cert-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .cert-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-issuer {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .contact {
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
     </nav>
-    <!--/ Nav End /-->
 
-    <!--/ Intro Skew Star /-->
-    <div
-      id="home"
-      class="intro route bg-image"
-      style="background-image: url(img/intro-bg.jpg)"
-    >
-      <div class="overlay-itro"></div>
-      <div class="intro-content display-table">
-        <div class="table-cell">
-          <div class="container">
-            <!--<p class="display-6 color-d">Hello, world!</p>-->
-            <h1 class="intro-title mb-4">I'm Suhas 👋🏻</h1>
-            <p class="intro-subtitle">
-              <span class="text-slider-items">Full Stack Developer </span
-              ><strong class="text-slider"></strong>
-            </p>
-            <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/ Intro Skew End /-->
-
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img
-                          src="img/suhas.jpg"
-                          class="img-fluid rounded b-shadow-a"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p>
-                          <span class="title-s">Name: </span>
-                          <span>Suhas Kunte Manjunath Rao</span>
-                        </p>
-                        <p>
-                          <span class="title-s">Email: </span>
-                          <span>suhasvarun1@gmail.com</span>
-                        </p>
-                        <p>
-                          <span class="title-s">Location: </span>
-                          <span>Buffalo, New York</span>
-                        </p>
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          onclick="window.location.href='assets/Suhas_K_M_Resume.pdf'"
-                          style="margin-bottom: 20px;"
-                        >
-                          View Resume
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-                    <span>Java</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 90%"
-                        aria-valuenow="90"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>Python</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 80%"
-                        aria-valuenow="80"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>SQL</span> <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 85%"
-                        aria-valuenow="85"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>HTML</span> <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 85%"
-                        aria-valuenow="85"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>CSS</span> <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 85%"
-                        aria-valuenow="85"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>JavaScript</span> <span class="pull-right">70%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 70%"
-                        aria-valuenow="70"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>React.js</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 80%"
-                        aria-valuenow="80"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <span>Flask</span> <span class="pull-right">70%</span>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 70%"
-                        aria-valuenow="70"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">About me</h5>
-                    </div>
-                    <p class="lead">
-                      I am a 2023 graduate of New Horizon College of
-                      Engineering, where I earned a Bachelor of Engineering
-                      degree in Information Science and Engineering.
-                    </p>
-                    <p class="lead">
-                      During my college tenure, I served as a board member for
-                      the VMWare IT Academy Club, where I led numerous technical
-                      events.
-                    </p>
-                    <p class="lead">
-                      In my last professional experience as a project intern at
-                      Hindustan Aeronautics Limited (HAL), I designed and
-                      implemented a sensor data management system using Visual
-                      C++ for an unmanned aerial vehicle (UAV) project.
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Suhas Kunte Manjunath Rao</h1>
+            <p class="tagline">AI/ML Engineer & Researcher</p>
+            <p class="subtitle">Specializing in Generative AI, LLMs, and Secure Code Generation | MS in Computer Science @ University at Buffalo</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="assets/Suhas_K_M_Resume.pdf" class="btn btn-secondary">Download Resume</a>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!--/ Section Certifications /-->
-    <section id="certifications" class="services-mf route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">Certifications</h3>
-              <!-- <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p> -->
-              <div class="line-mf"></div>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm a passionate AI/ML Engineer and researcher currently pursuing my Master's in Computer Science at the University at Buffalo. My work focuses on the intersection of Large Language Models, secure code generation, and practical AI applications.</p>
+                <p>As a Research Assistant, I evaluate LLaMA 3.1 LLM performance for code generation quality and compliance with Secure Coding Practices. Previously at Brillio, I developed API-based agents using RAG for automated code transformation, achieving 70% conversion accuracy and reducing manual effort by 60%.</p>
+                <p>I'm driven by the challenge of building intelligent systems that solve real-world problems while maintaining security and reliability. My experience spans from developing SQL-based chatbots using Claude via AWS Bedrock to implementing cloud migration strategies and building AI-powered applications.</p>
             </div>
-          </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3.83</div>
+                    <div class="stat-label">Masters GPA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Code Conversion Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+            </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/oracle_sql.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/oracle_sql.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-f3cbad27-5060-4e33-8a80-ff0b68d641fc/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Oracle SQL</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">09 May 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/python.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/python.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-e7e50099-fc06-48b7-a07a-1d8572209d89/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Python</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">23 May 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a
-                href="img/data_warehouse_fundamentals.jpg"
-                data-lightbox="gallery-mf"
-              >
-                <div class="work-img">
-                  <img
-                    src="img/data_warehouse_fundamentals.jpg"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-693c2976-6ebd-4041-a7f0-43559be7ea1f/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Data Warehouse</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">17 July 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/apache_spark.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/apache_spark.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-b8e6adeb-d32c-4e7d-afa3-886f042ca0b6/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Apache Spark-3</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">16 July 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/aws.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/aws.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-97a87dab-430c-4377-84c1-1409ecd62e0d/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">AWS Cloud Practitioner</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">01 Aug 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/power_bi.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/power_bi.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a
-                href="https://www.udemy.com/certificate/UC-84a705a7-c222-4a5a-8aef-36af2b14b917/"
-                target="_blank"
-              >
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Microsoft Power BI</h2>
-                      <div class="w-more">
-                        <span>Udemy</span> |
-                        <span class="w-date">13 Aug 2023</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--/ Section Certications End /-->
-
-    <!--/ Section Project Start /-->
-    <section id="projects" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">Projects</h3>
-              <!-- <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p> -->
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog" style="margin-bottom: 30px">
-              <div class="card-img">
-                <a
-                  href="https://github.com/SuhasKM2001/KnowHive"
-                  target="_blank"
-                  ><img src="img/knowhive.png" alt="" class="img-fluid"
-                /></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">React.js Website</h6>
-                  </div>
-                </div>
-                <h3 class="card-title">
-                  <a
-                    href="https://github.com/SuhasKM2001/KnowHive"
-                    target="_blank"
-                    >KnowHive</a
-                  >
-                </h3>
-                <p class="card-description">
-                  React-based frontend application allows field engineers
-                  seeking quick access to accurate and up-to-date knowledge for
-                  resolving incidents efficiently and effectively.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog" style="margin-bottom: 30px">
-              <div class="card-img">
-                <a
-                  href="https://github.com/tharunkumar-15/Conventia-App"
-                  target="_blank"
-                  ><img src="img/conventia.jpg" alt="" class="img-fluid"
-                /></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">React native app</h6>
-                  </div>
-                </div>
-                <h3 class="card-title">
-                  <a
-                    href="https://github.com/tharunkumar-15/Conventia-App"
-                    target="_blank"
-                    >Conventia</a
-                  >
-                </h3>
-                <p class="card-description">
-                  Developed a React Native application for the people with
-                  Alzheimer to identify the person and then record, store and
-                  narrate the conversations made.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog" style="margin-bottom: 30px">
-              <div class="card-img">
-                <a
-                  href="https://github.com/SuhasKM2001/StudyBuddy"
-                  target="_blank"
-                  ><img src="img/studdybuddy.jpg" alt="" class="img-fluid"
-                /></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">React.js Website</h6>
-                  </div>
-                </div>
-                <h3 class="card-title">
-                  <a
-                    href="https://github.com/SuhasKM2001/StudyBuddy"
-                    target="_blank"
-                    >Study Buddy</a
-                  >
-                </h3>
-                <p class="card-description">
-                  Study Buddy a non-profit website whose mission is to empower
-                  underprivileged children and youth through appropriate
-                  education and reach out to the children in need of proper
-                  meals.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--/ Section Project End /-->
-
-    <!--/ Section achievements Start /-->
-    <section id="achievements" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">Achievements</h3>
-              <!-- <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p> -->
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/toycathon.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/toycathon.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a href="assets/Toycathon_Certificate.pdf" target="_blank">
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Toycathon | Winner</h2>
-                      <div class="w-more">
-                        <span>National Level Hackathon</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="img/design_overflow.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="img/design_overflow.jpg" alt="" class="img-fluid" />
-                </div>
-              </a>
-              <a href="assets/Design_Overflow.pdf" target="_blank">
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Design Overflow | 2nd place</h2>
-                      <div class="w-more">
-                        <span>Inter College Hackathon</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <span class="ion-link"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--/ Section achievements End /-->
-
-    <!--/ Section Contact-Footer Star /-->
-    <section
-      class="paralax-mf footer-paralax bg-image sect-mt4 route d-flex justify-content-center align-items-center"
-      style="background-image: url(img/overlay-bg.jpg)"
-    >
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="contact-mf text-center">
-              <div id="contact" class="box-shadow-full">
-                <div class="row justify-content-center">
-                  <div class="col-md-7 text-center">
-                    <div class="title-box-1 pt-2 pb-2 pt-md-0">
-                      <h2>Get in Touch</h2>
-                    </div>
-                    <div class="more-info">
-                      <ul class="list-ico">
-                        <li>
-                          <span class="ion-ios-location"></span> Buffalo,
-                          New York
-                        </li>
-                        <li>
-                          <span class="ion-ios-telephone"></span> +1 (716)275-2993
-                        </li>
-                        <li>
-                          <span class="ion-email"></span> suhasvarun1@gmail.com
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li>
-                          <a href="https://www.linkedin.com/in/suhas-k-m/"
-                            ><span class="ico-circle"
-                              ><i class="ion-social-linkedin"></i></span
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="https://github.com/SuhasKM2001"
-                            ><span class="ico-circle"
-                              ><i class="ion-social-github"></i></span
-                          ></a>
-                        </li>
-                        <!-- <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li> -->
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <div id="preloader"></div>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-timeline">
+            <div class="education-item">
+                <div class="education-content">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-title">Master of Science in Computer Science and Engineering</div>
+                            <div class="education-school">University at Buffalo</div>
+                            <div class="education-gpa">GPA: 3.83/4.0</div>
+                        </div>
+                        <div class="education-date">Aug 2025 - May 2027</div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-content">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-title">Bachelor of Engineering in Information Science and Engineering</div>
+                            <div class="education-school">New Horizon College of Engineering, Bengaluru</div>
+                            <div class="education-gpa">CGPA: 9.36/10</div>
+                        </div>
+                        <div class="education-date">June 2019 - June 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/counterup/jquery.waypoints.min.js"></script>
-    <script src="lib/counterup/jquery.counterup.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <section id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Research Assistant</div>
+                        <div class="experience-company">University at Buffalo</div>
+                        <div class="experience-date">September 2025 – Present | Buffalo, NY</div>
+                    </div>
+                </div>
+                <ul class="experience-description">
+                    <li>Evaluating LLaMA 3.1 LLM performance to analyze code-generation quality and compliance with Secure Coding Practices (SCP) for internal benchmarking studies</li>
+                    <li>Conducting comprehensive research on secure code generation patterns and vulnerability detection in LLM-generated code</li>
+                </ul>
+            </div>
 
-    <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
-  </body>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Associate Engineer</div>
+                        <div class="experience-company">Brillio</div>
+                        <div class="experience-date">March 2024 – July 2025 | Bengaluru, India</div>
+                    </div>
+                </div>
+                <ul class="experience-description">
+                    <li>Achieved 70% code conversion accuracy by developing API-based agents for legacy TIBCO BusinessWorks repositories to .NET microservices, leveraging Retrieval-Augmented Generation (RAG) for context-aware and automated code transformation, reducing manual rewriting effort by 60%</li>
+                    <li>Customized an internal developer portal using the open-source Backstage platform, creating reusable templates for automated deployments on Amazon EKS and EC2, reducing deployment setup time from 40 minutes to 15 minutes and improving developer onboarding efficiency by 70%</li>
+                    <li>Built an SQL-based chatbot over the ServiceNow Incident database (100K records) using Claude model via AWS Bedrock, enabling real-time query responses and eliminating the need for manual SQL queries</li>
+                    <li>Implemented two cloud migration strategies—refactoring applications for AWS Elastic Beanstalk and rehosting to Amazon EC2—automating deployment pipelines with GitHub Actions</li>
+                    <li>Enhanced API security for app modernization project by integrating CryptoJS-based encryption and decryption for every API request and response, securing 100% of endpoints</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Project Internship</div>
+                        <div class="experience-company">Hindustan Aeronautics Limited</div>
+                        <div class="experience-date">March 2023 – April 2023 | Bengaluru, India</div>
+                    </div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developed the Sensor Data Management (SDM) system in Visual C++, enabling seamless data exchange between the main computer and UAV, reducing packet loss by 15%</li>
+                    <li>Designed an interactive GUI in Microsoft Foundation Class (MFC) for real-time visualization and control of sensor data, improving monitoring efficiency and system usability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-icon">
+                <i class="fab fa-python" style="color: #3776ab;"></i>
+                <span class="skill-tooltip">Python</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-java" style="color: #007396;"></i>
+                <span class="skill-tooltip">Java</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-js" style="color: #f7df1e;"></i>
+                <span class="skill-tooltip">JavaScript</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-react" style="color: #61dafb;"></i>
+                <span class="skill-tooltip">React.js</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-node" style="color: #339933;"></i>
+                <span class="skill-tooltip">Node.js</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fas fa-flask" style="color: #000000;"></i>
+                <span class="skill-tooltip">Flask</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-aws" style="color: #ff9900;"></i>
+                <span class="skill-tooltip">AWS</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fas fa-database" style="color: #4479a1;"></i>
+                <span class="skill-tooltip">SQL</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-docker" style="color: #2496ed;"></i>
+                <span class="skill-tooltip">Docker</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fab fa-git-alt" style="color: #f05032;"></i>
+                <span class="skill-tooltip">Git</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fas fa-brain" style="color: #6366f1;"></i>
+                <span class="skill-tooltip">Machine Learning</span>
+            </div>
+            <div class="skill-icon">
+                <i class="fas fa-robot" style="color: #8b5cf6;"></i>
+                <span class="skill-tooltip">Gen AI / LLMs</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">KnowHive</h3>
+                    <p class="project-tech">React.js • Flask • GPT-2 • MySQL</p>
+                    <p class="project-description">Knowledge-based platform with REST APIs integrating GPT-2 model for recommending solutions, reducing incident resolution time by 25%</p>
+                    <div class="project-links">
+                        <a href="https://github.com/SuhasKM2001/KnowHive" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Conventia</h3>
+                    <p class="project-tech">React Native • FaceNet • Pyannote</p>
+                    <p class="project-description">Mobile application integrating facial recognition and speaker diarization, achieving 85% speaker identification accuracy to help Alzheimer's patients recall conversations</p>
+                    <div class="project-links">
+                        <a href="https://github.com/tharunkumar-15/Conventia-App" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Visual Assistant System</h3>
+                    <p class="project-tech">YOLOv3 • Computer Vision • Python</p>
+                    <p class="project-description">Real-time visual aid using YOLOv3 to detect and classify objects in live video feeds, achieving 92% detection accuracy for visually impaired users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2 class="section-title">Publications</h2>
+        <div class="publications-grid">
+            <div class="publication-card">
+                <div class="publication-title">Add Your IEEE Publication Title Here</div>
+                <div class="publication-authors">Suhas K M, et al.</div>
+                <div class="publication-venue">IEEE Conference/Journal Name • Year</div>
+                <p style="color: var(--gray); line-height: 1.6;">Brief description of your publication and its key contributions to the field.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" class="project-link">
+                        <i class="fas fa-file-pdf"></i> View Paper
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-database"></i></div>
+                <div class="cert-title">Oracle SQL</div>
+                <div class="cert-issuer">Udemy • May 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-python"></i></div>
+                <div class="cert-title">Python Programming</div>
+                <div class="cert-issuer">Udemy • May 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-database"></i></div>
+                <div class="cert-title">Data Warehouse Fundamentals</div>
+                <div class="cert-issuer">Udemy • July 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-fire"></i></div>
+                <div class="cert-title">Apache Spark-3</div>
+                <div class="cert-issuer">Udemy • July 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                <div class="cert-title">AWS Cloud Practitioner</div>
+                <div class="cert-issuer">Udemy • August 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="cert-title">Microsoft Power BI</div>
+                <div class="cert-issuer">Udemy • August 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" style="background: white;">
+        <h2 class="section-title">Achievements</h2>
+        <div class="experience-grid">
+            <div class="experience-card" style="border-left-color: #fbbf24;">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">🏆 Toycathon - National Level Hackathon</div>
+                        <div class="experience-company">Winner</div>
+                    </div>
+                </div>
+                <ul class="experience-description">
+                    <li>Programmed a digital board game using Python that provides knowledge about Indian culture</li>
+                    <li>Selected as one of the top 117 winners from over 1.2 lakh participants across India in the digital edition</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="text-align: center; color: var(--gray); max-width: 600px; margin: 0 auto 2rem;">I'm always open to discussing new opportunities, collaborations, or research in AI/ML and Generative AI. Feel free to reach out!</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="contact-icon fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Location</strong>
+                    <p>Buffalo, New York</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="contact-icon fas fa-envelope"></i>
+                <div>
+                    <strong>Email</strong>
+                    <p>suhasvarun1@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="contact-icon fas fa-phone"></i>
+                <div>
+                    <strong>Phone</strong>
+                    <p>+1 (716) 275-2993</p>
+                </div>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/suhas-k-m/" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/SuhasKM2001" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Suhas Kunte Manjunath Rao. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
