@@ -31,6 +31,12 @@
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
+        body.dark-mode {
+            --primary: #3b82f6;
+            --secondary: #06b6d4;
+            --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
@@ -66,6 +72,14 @@
             color: #e2e8f0;
         }
         
+        body.dark-mode .experience-card {
+            border-left-color: #3b82f6;
+        }
+        
+        body.dark-mode .publication-card {
+            border-left-color: #06b6d4;
+        }
+        
         body.dark-mode .project-description,
         body.dark-mode .experience-description li,
         body.dark-mode .about-text p,
@@ -86,6 +100,56 @@
         
         body.dark-mode .social-link {
             background: #2d3748;
+        }
+        
+        body.dark-mode .social-link:hover {
+            background: #3b82f6;
+        }
+        
+        body.dark-mode .section-title::after {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        }
+        
+        body.dark-mode .logo {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        body.dark-mode .education-item::before {
+            background: #3b82f6;
+        }
+        
+        body.dark-mode .education-timeline::before {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        }
+        
+        body.dark-mode .stat-number {
+            color: #3b82f6;
+        }
+        
+        body.dark-mode .cert-icon {
+            color: #3b82f6;
+        }
+        
+        body.dark-mode .contact-icon {
+            color: #3b82f6;
+        }
+        
+        body.dark-mode .project-link {
+            color: #3b82f6;
+        }
+        
+        body.dark-mode .project-link:hover {
+            color: #06b6d4;
+        }
+        
+        body.dark-mode .education-school,
+        body.dark-mode .experience-company,
+        body.dark-mode .publication-venue,
+        body.dark-mode .project-tech {
+            color: #3b82f6;
         }
         
         .navbar {
@@ -188,6 +252,11 @@
             padding: 2rem;
             margin: 0;
             width: 100%;
+            transition: background 0.3s ease;
+        }
+        
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0e7490 100%);
         }
         
         .hero::before {
