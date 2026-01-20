@@ -17,6 +17,11 @@
             box-sizing: border-box;
         }
         
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
         :root {
             --primary: #6366f1;
             --secondary: #8b5cf6;
@@ -31,6 +36,56 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body.dark-mode {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .navbar {
+            background: rgba(26, 32, 44, 0.95);
+        }
+        
+        body.dark-mode .nav-links a {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode section {
+            background-color: #1a202c;
+        }
+        
+        body.dark-mode .experience-card,
+        body.dark-mode .project-card,
+        body.dark-mode .publication-card,
+        body.dark-mode .cert-card,
+        body.dark-mode .education-content,
+        body.dark-mode .skill-icon {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .project-description,
+        body.dark-mode .experience-description li,
+        body.dark-mode .about-text p,
+        body.dark-mode .education-gpa,
+        body.dark-mode .education-date,
+        body.dark-mode .cert-issuer,
+        body.dark-mode .publication-authors {
+            color: #cbd5e0;
+        }
+        
+        body.dark-mode .contact {
+            background: #2d3748;
+        }
+        
+        body.dark-mode .stat-card {
+            background: #2d3748;
+        }
+        
+        body.dark-mode .social-link {
+            background: #2d3748;
         }
         
         .navbar {
@@ -51,12 +106,49 @@
         }
         
         .nav-container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 0.5rem;
+        }
+        
+        body.dark-mode .theme-toggle {
+            color: #fbbf24;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        body.dark-mode .mobile-menu-toggle {
+            color: #e2e8f0;
         }
         
         .logo {
@@ -94,6 +186,8 @@
             position: relative;
             overflow: hidden;
             padding: 2rem;
+            margin: 0;
+            width: 100%;
         }
         
         .hero::before {
@@ -188,8 +282,9 @@
         
         section {
             padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
+            width: 100%;
         }
         
         .section-title {
@@ -198,6 +293,9 @@
             margin-bottom: 3rem;
             position: relative;
             padding-bottom: 1rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .section-title::after {
@@ -217,6 +315,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .about-text p {
@@ -253,6 +353,8 @@
         .education-timeline {
             position: relative;
             padding-left: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .education-timeline::before {
@@ -322,6 +424,8 @@
         .experience-grid {
             display: grid;
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .experience-card {
@@ -388,6 +492,8 @@
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 2rem;
             justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .skill-icon {
@@ -435,6 +541,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .project-card {
@@ -505,6 +613,8 @@
         .publications-grid {
             display: grid;
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .publication-card {
@@ -537,6 +647,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .cert-card {
@@ -578,6 +690,9 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .contact-item {
@@ -626,8 +741,40 @@
         }
         
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+            
+            body.dark-mode .nav-links {
+                background: rgba(26, 32, 44, 0.98);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            body.dark-mode .nav-links li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             }
             
             .hero h1 {
@@ -649,6 +796,16 @@
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             }
+            
+            .education-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: start;
+            }
         }
     </style>
 </head>
@@ -656,17 +813,25 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">SK</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -942,7 +1107,7 @@
         </div>
     </section>
 
-    <section id="achievements" style="background: white;">
+    <section id="achievements">
         <h2 class="section-title">Achievements</h2>
         <div class="experience-grid">
             <div class="experience-card" style="border-left-color: #fbbf24;">
@@ -1021,8 +1186,55 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu after clicking
+                    document.getElementById('navLinks').classList.remove('active');
+                    document.querySelector('#mobileMenuToggle i').classList.remove('fa-times');
+                    document.querySelector('#mobileMenuToggle i').classList.add('fa-bars');
                 }
             });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
         });
     </script>
 </body>
